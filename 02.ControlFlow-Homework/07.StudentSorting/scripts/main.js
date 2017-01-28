@@ -11,12 +11,14 @@ $(document).ready(function () {
             .map(e => $(e).attr('id').split('-')[1]))];
 
         $('input[type=hidden]').val(ids);
+
+        return true;
     })
 });
 
 function bindEvents() {
     $('.removeRow').on('click', function () {
-        $(this).parent().parent().remove();
+        $(this).parent().parent().detach();
     })
 }
 

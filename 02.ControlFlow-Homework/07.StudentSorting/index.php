@@ -98,12 +98,14 @@
 </body>
 </html>
 <?php
-if (isset($_POST['ids']) && !empty(trim($_POST['ids']))) {
+if (isset($_POST['ids'])) {
     $students = [];
 
     $ids = explode(',', trim($_POST['ids']));
     $sortCriteria = $_POST['sortCriteria'];
     $sortOrder = $_POST['sortOrder'];
+
+    var_dump($ids);
 
     foreach ($ids as $id) {
         $student = (object)[];
