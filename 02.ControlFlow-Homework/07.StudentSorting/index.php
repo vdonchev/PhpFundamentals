@@ -106,6 +106,9 @@ if (isset($_POST['ids'])) {
     $sortOrder = $_POST['sortOrder'];
 
     foreach ($ids as $id) {
+        if (empty(trim($_POST['firstName-' . $id])))
+            continue;
+
         $student = (object)[];
         $student->firstName = trim($_POST['firstName-' . $id]);
         $student->lastName = trim($_POST['lastName-' . $id]);
