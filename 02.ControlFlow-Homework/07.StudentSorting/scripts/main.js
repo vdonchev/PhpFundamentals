@@ -6,9 +6,9 @@ $(document).ready(function () {
     bindEvents();
 
     $('form').on('submit', function () {
-        let ids = $('input[type=email]')
+        let ids = [...new Set($('input[type=email]')
             .toArray()
-            .map(e => $(e).attr('id').split('-')[1]);
+            .map(e => $(e).attr('id').split('-')[1]))];
 
         $('input[type=hidden]').val(ids);
     })
