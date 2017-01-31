@@ -44,7 +44,9 @@ function reverse($str)
 
 function split($str)
 {
-    return implode(' ', str_split($str));
+    return implode(' ', array_filter(str_split($str), function ($ch) {
+        return ctype_alpha($ch);
+    }));
 }
 
 function getHash($str)
