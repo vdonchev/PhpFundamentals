@@ -1,5 +1,7 @@
 <?php
 $text = trim(fgets(STDIN));
-echo preg_replace_callback("/<a href=\"([^\"]+)\">(.*?)<\\/a>/", function($m) {
-    return "[URL={$m[1]}]{$m[2]}[/URL]";
-}, $text);
+$text = str_replace("<a href=\"", "[URL=", $text);
+$text = str_replace("\">", "]", $text);
+$text = str_replace("</a>", "[/URL]", $text);
+
+echo $text;
