@@ -4,7 +4,7 @@
 
 $text = trim(fgets(STDIN));
 $word = trim(fgets(STDIN));
-$res = preg_match_all("/([^.?!]*\\b" . $word . "\\b[^.?!]*[.?!])/", $text, $a);
-foreach ($a[0] as $item) {
+preg_match_all("/([^.?!]*\\b" . $word . "\\b[^.?!]*[.?!])/", $text, $res);
+foreach ($res[0] as $item) {
     echo trim($item) . "\n";
 }
