@@ -1,5 +1,5 @@
 <?php
-$arr = array_filter(explode(' ', fgets(STDIN)));
+$arr = array_filter(explode(' ', trim(fgets(STDIN))));
 $input = trim(fgets(STDIN));
 while ($input != 'print') {
     $tokens = preg_split('/\s+/', $input);
