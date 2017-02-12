@@ -34,8 +34,8 @@ class Car
     public function getTimeTraveled(): array
     {
         return [
-            "hours" => ceil($this->timeTraveled / 60),
-            "minutes" => ceil($this->timeTraveled % 60)
+            "hours" => floor($this->timeTraveled / 60),
+            "minutes" => floor($this->timeTraveled % 60)
         ];
     }
 
