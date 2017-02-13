@@ -33,6 +33,7 @@ class Car
         }
 
         $this->fuel -= $fuelNeeded;
+        $this->fuel = abs($this->fuel);
         $this->distanceTraveled += $distance;
     }
 
