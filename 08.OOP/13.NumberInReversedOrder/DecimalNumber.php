@@ -5,18 +5,13 @@ class DecimalNumber
 {
     private $number;
 
-    public function __construct(float $number)
+    public function __construct(string $number)
     {
         $this->number = $number;
     }
 
-    public function getNumberReversed(): float
+    public function getNumberReversed(): string
     {
-        $reversed = floatval(strrev($this->number . ''));
-        if ($this->number < 0) {
-            return - $reversed;
-        }
-
-        return $reversed;
+        return strrev($this->number . '');
     }
 }

@@ -51,7 +51,7 @@ class Car
 
             $this->distanceTraveled += $possibleDistance;
             $this->fuel = 0;
-            $this->timeTraveled += $possibleDistance;
+            $this->timeTraveled += $possibleDistance* $this->minutesPerKm;
         }
     }
 

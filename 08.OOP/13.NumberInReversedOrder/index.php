@@ -1,5 +1,5 @@
 <?php
 require_once 'DecimalNumber.php';
 
-$decimal = new DecimalNumber(-1234.55);
+$decimal = new DecimalNumber(trim(fgets(STDIN)));
 var_dump($decimal->getNumberReversed());

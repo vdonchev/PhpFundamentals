@@ -28,7 +28,7 @@ class Car
     public function travel(float $distance)
     {
         $fuelNeeded = $distance * $this->fuelConsumption;
-        if ($fuelNeeded > $this->fuel) {
+        if (round($fuelNeeded, 14) > round($this->fuel, 14)) {
             throw new \Exception("Insufficient fuel for the drive");
         }
 
