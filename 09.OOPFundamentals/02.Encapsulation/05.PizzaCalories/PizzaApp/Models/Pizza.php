@@ -76,7 +76,7 @@ class Pizza
 
     function __toString(): string
     {
-        $caloriesFormatted = number_format($this->getTotalCalories(), 2);
+        $caloriesFormatted = number_format($this->getTotalCalories(), 2, ".", "");
         return "{$this->getName()} - {$caloriesFormatted} Calories.";
     }
 }

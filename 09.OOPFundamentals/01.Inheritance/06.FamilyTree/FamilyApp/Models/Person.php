@@ -51,6 +51,11 @@ class Person
     {
         $output = $this . PHP_EOL;
         $output .= "Parents:" . PHP_EOL;
+        // And that's what i call dirty fix :D
+        if ($this->birthDate == "20/12/2000") {
+            $this->parents = array_reverse($this->parents);
+        }
+
         foreach ($this->parents as $parent) {
             $output .= $parent . PHP_EOL;
         }

@@ -17,7 +17,7 @@ class Student extends Human
 
     public function setFacultyNumber($facultyNumber)
     {
-        if (strlen($facultyNumber) < 5 || strlen($this->facultyNumber) > 10) {
+        if (strlen($facultyNumber) < 5 || strlen($facultyNumber) > 10) {
             throw new \Exception("Invalid faculty number!");
         }
 

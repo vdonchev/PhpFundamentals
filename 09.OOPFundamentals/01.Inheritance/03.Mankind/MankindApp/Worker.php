@@ -17,7 +17,7 @@ class Worker extends Human
 
     protected function setLastName(string $lastName)
     {
-        if (!preg_match("/.{4,}/", $lastName)) {
+        if (strlen($lastName) < 3) {
             throw new \Exception("Expected length more than 3 symbols!Argument: lastName");
         }
 
@@ -50,7 +50,7 @@ class Worker extends Human
         $output .= "Hours per day: " . number_format($this->workHoursPerDay, 2, '.', ''). PHP_EOL;
         $output .= "Salary per hour: " . number_format($this->calculateSalaryPerHour(), 2, '.', ''). PHP_EOL;
 
-        return $output . PHP_EOL;
+        return $output;
     }
 
     private function calculateSalaryPerHour(): float

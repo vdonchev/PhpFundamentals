@@ -9,13 +9,13 @@ abstract class Human
 
     public function __construct(string $firstName, string $lastName)
     {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+        $this->setFirstName($firstName);
+        $this->setLastName($lastName);
     }
 
     protected function setFirstName(string $firstName)
     {
-        if (!preg_match("/[A-Z]/", $firstName)) {
+        if ($firstName[0] !== strtoupper($firstName[0])) {
             throw new \Exception("Expected upper case letter!Argument: firstName");
         }
 
@@ -28,7 +28,7 @@ abstract class Human
 
     protected function setLastName(string $lastName)
     {
-        if (!preg_match("/[A-Z]/", $lastName)) {
+        if ($lastName[0] !== strtoupper($lastName[0])) {
             throw new \Exception("Expected upper case letter!Argument: lastName");
         }
 

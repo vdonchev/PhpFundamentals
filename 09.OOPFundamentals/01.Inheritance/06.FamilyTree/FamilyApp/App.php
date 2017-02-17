@@ -69,8 +69,10 @@ class App
                 $child = $this->familyTree->getPersonByDate($child);
             }
 
-            $child->addParent($parent);
-            $parent->addChild($child);
+            if ($parent != null && $child != null) {
+                $child->addParent($parent);
+                $parent->addChild($child);
+            }
         }
     }
 

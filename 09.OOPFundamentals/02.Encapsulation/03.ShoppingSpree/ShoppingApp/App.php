@@ -33,12 +33,20 @@ class App
 
         try {
             foreach ($customers as $customerData) {
+                if (strstr($customerData, "=") === false) {
+                    throw new \Exception("Name cannot be empty");
+                }
+
                 $customerData = explode("=", $customerData);
                 $customer = new Person($customerData[0], floatval($customerData[1]));
                 $this->shop->addCustomer($customer);
             }
 
             foreach ($products as $productData) {
+                if (strstr($productData, "=") === false) {
+                    throw new \Exception("Name cannot be empty");
+                }
+
                 $productData = explode("=", $productData);
                 $product = new Product($productData[0], floatval($productData[1]));
                 $this->shop->addProduct($product);

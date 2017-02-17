@@ -16,14 +16,22 @@ class FamilyTree
      */
     private $personsByBirthDate = [];
 
-    public function getPersonByName(string $firstName, string $lastName): Person
+    public function getPersonByName(string $firstName, string $lastName)
     {
-        return $this->personsByName[$firstName . $lastName];
+        if (array_key_exists($firstName . $lastName, $this->personsByName)) {
+            return $this->personsByName[$firstName . $lastName];
+        }
+
+        return null;
     }
 
-    public function getPersonByDate(string $date): Person
+    public function getPersonByDate(string $date)
     {
-        return $this->personsByBirthDate[$date];
+        if (array_key_exists($date, $this->personsByBirthDate)) {
+            return $this->personsByBirthDate[$date];
+        }
+
+        return null;
     }
 
     public function addPerson(Person $person)

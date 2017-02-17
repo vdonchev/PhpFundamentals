@@ -37,8 +37,6 @@ class App
 
             try {
                 $animalData = explode(self::DELIMITER, $this->readLine());
-
-                $className = "AnimalsApp\\Models\\{$input[0]}";
                 switch ($input[0]) {
                     case "Cat":
                         $this->animals[] = new Cat($animalData[0], intval($animalData[1]), $animalData[2]);
@@ -50,15 +48,22 @@ class App
                         $this->animals[] = new Frog($animalData[0], intval($animalData[1]), $animalData[2]);
                         break;
                     case "Kitten":
+                        if (strtolower($animalData[2]) == "male") {
+                            throw new \Exception("Invalid input!");
+                        }
+
                         $this->animals[] = new Kitten($animalData[0], intval($animalData[1]), $animalData[2]);
                         break;
                     case "Tomcat":
                         $this->animals[] = new Tomcat($animalData[0], intval($animalData[1]), $animalData[2]);
                         break;
+                    default:
+                        throw new \Exception("Invalid input!");
                 }
 
             } catch (\Exception $ex) {
                 $this->writeLine($ex->getMessage());
+                exit;
             }
         }
     }
