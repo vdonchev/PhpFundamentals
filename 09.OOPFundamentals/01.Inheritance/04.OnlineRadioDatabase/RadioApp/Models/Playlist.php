@@ -36,8 +36,8 @@ class Playlist
     {
         return [
             "hours" => floor(floor($this->totalMediaLength / 60) / 60),
-            "minutes" => floor($this->totalMediaLength / 60) % 60,
-            "seconds" => $this->totalMediaLength % 60
+            "minutes" => str_pad(floor($this->totalMediaLength / 60) % 60, 2, "0", STR_PAD_LEFT),
+            "seconds" => str_pad($this->totalMediaLength % 60, 2, "0", STR_PAD_LEFT)
         ];
     }
 }

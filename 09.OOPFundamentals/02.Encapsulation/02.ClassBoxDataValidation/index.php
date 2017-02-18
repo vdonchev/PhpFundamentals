@@ -11,9 +11,9 @@ list($length, $width, $height) = array_map("floatval", [readLine(), readLine(), 
 try {
     $box = new Box($length, $width, $height);
 
-    writeLine("Surface Area – " . number_format($box->getSurfaceArea(), 2));
-    writeLine("Lateral Surface Area – " . number_format($box->getLateralSurfaceArea(), 2));
-    writeLine("Volume – " . number_format($box->getVolume(), 2));
+    writeLine("Surface Area - " . number_format($box->getSurfaceArea(), 2, ".", ""));
+    writeLine("Lateral Surface Area - " . number_format($box->getLateralSurfaceArea(), 2, ".", ""));
+    writeLine("Volume - " . number_format($box->getVolume(), 2, ".", ""));
 } catch (Exception $e) {
     writeLine($e->getMessage());
 }

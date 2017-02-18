@@ -58,7 +58,7 @@ class Person
             return $output . "Nothing bought";
         }
 
-        return $output . implode(", ",
+        return $output . implode(",",
                 array_map(
                     function (Product $product) {
                         return $product->getName();

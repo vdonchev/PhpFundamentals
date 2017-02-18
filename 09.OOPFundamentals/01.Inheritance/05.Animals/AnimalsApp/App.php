@@ -55,6 +55,10 @@ class App
                         $this->animals[] = new Kitten($animalData[0], intval($animalData[1]), $animalData[2]);
                         break;
                     case "Tomcat":
+                        if (strtolower($animalData[2]) == "female") {
+                            throw new \Exception("Invalid input!");
+                        }
+
                         $this->animals[] = new Tomcat($animalData[0], intval($animalData[1]), $animalData[2]);
                         break;
                     default:

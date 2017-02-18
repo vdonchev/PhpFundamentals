@@ -8,9 +8,9 @@ require_once "Box.php";
 list($length, $width, $height) = array_map("floatval", [readLine(), readLine(), readLine()]);
 $box = new Box($length, $width, $height);
 
-writeLine("Surface Area – " . number_format($box->getSurfaceArea(), 2));
-writeLine("Lateral Surface Area – " . number_format($box->getLateralSurfaceArea(), 2));
-writeLine("Volume – " . number_format($box->getVolume(), 2));
+writeLine("Surface Area - " . number_format($box->getSurfaceArea(), 2, ".", ""));
+writeLine("Lateral Surface Area - " . number_format($box->getLateralSurfaceArea(), 2, ".", ""));
+writeLine("Volume - " . number_format($box->getVolume(), 2, ".", ""));
 
 /**
  * @param $content mixed
