@@ -18,7 +18,7 @@ $studentData = explode(" ", readLine());
 $workerData = explode(" ", readLine());
 
 /**
- * @var $humans Human[]
+ * @var $humans Citizen[]
  */
 $humans = [];
 try {
