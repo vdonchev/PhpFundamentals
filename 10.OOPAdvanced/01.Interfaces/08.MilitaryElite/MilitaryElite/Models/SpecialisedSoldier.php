@@ -36,4 +36,10 @@ abstract class SpecialisedSoldier extends PrivateSoldier implements SpecialisedS
     {
         return $this->corps;
     }
+
+    function __toString()
+    {
+        return parent::__toString() . PHP_EOL
+            . "Corps: {$this->getCorps()}";
+    }
 }

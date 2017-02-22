@@ -26,4 +26,11 @@ class PrivateSoldier extends Soldier implements PrivateSoldierInterface
     {
         return $this->salary;
     }
+
+    function __toString()
+    {
+        $salary = number_format($this->getSalary(), 2, ".", "");
+
+        return parent::__toString() . " Salary: {$salary}";
+    }
 }

@@ -48,4 +48,9 @@ abstract class Soldier implements SoldierInterface
     {
         return $this->lastName;
     }
+
+    function __toString()
+    {
+        return "Name: {$this->getFirstName()} {$this->getLastName()} Id: {$this->getId()}";
+    }
 }

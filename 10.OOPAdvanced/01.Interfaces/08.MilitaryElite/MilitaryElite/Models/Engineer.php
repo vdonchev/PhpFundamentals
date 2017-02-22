@@ -23,4 +23,16 @@ class Engineer extends SpecialisedSoldier implements EngineerInterface
     {
         return $this->repairs;
     }
+
+    function __toString()
+    {
+        $output = parent::__toString() . PHP_EOL
+            . "Repairs:" . PHP_EOL;
+
+        foreach ($this->getRepairs() as $repair) {
+            $output .= "  {$repair}" . PHP_EOL;
+        }
+
+        return trim($output);
+    }
 }

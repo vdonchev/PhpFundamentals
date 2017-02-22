@@ -11,7 +11,7 @@ class Repair implements RepairInterface
     private $name;
     private $workHours;
 
-    public function __construct($name, $workHours)
+    public function __construct(string $name, int $workHours)
     {
         $this->setName($name);
         $this->setWorkHours($workHours);
@@ -35,5 +35,10 @@ class Repair implements RepairInterface
     public function setWorkHours(int $hours)
     {
         $this->workHours = $hours;
+    }
+
+    function __toString()
+    {
+        return "Part Name: {$this->getName()} Hours Worked: {$this->getWorkHours()}";
     }
 }

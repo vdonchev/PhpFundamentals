@@ -7,7 +7,7 @@ namespace MilitaryElite\Models;
 use MilitaryElite\Models\Contracts\CommandoInterface;
 use MilitaryElite\Models\Contracts\MissionInterface;
 
-class Commando implements CommandoInterface
+class Commando extends SpecialisedSoldier implements CommandoInterface
 {
     /**
      * @var $missions MissionInterface[]
@@ -22,5 +22,17 @@ class Commando implements CommandoInterface
     public function getMissions(): array
     {
         return $this->missions;
+    }
+
+    function __toString()
+    {
+        $output = parent::__toString() . PHP_EOL
+            . "Missions:" . PHP_EOL;
+
+        foreach ($this->getMissions() as $mission) {
+            $output .= "  {$mission}" . PHP_EOL;
+        }
+
+        return trim($output);
     }
 }

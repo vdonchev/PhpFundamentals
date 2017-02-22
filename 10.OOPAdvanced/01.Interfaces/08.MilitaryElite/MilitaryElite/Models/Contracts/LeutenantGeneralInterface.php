@@ -6,7 +6,7 @@ namespace MilitaryElite\Models\Contracts;
 
 interface LeutenantGeneralInterface
 {
-    public function addPrivate(PrivateSoldierInterface $soldier);
+    public function addPrivate(SoldierInterface $soldier);
 
     /**
      * @return PrivateSoldierInterface[]

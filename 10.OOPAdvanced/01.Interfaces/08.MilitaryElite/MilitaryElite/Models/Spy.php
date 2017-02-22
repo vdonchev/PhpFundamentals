@@ -26,4 +26,10 @@ class Spy extends Soldier implements SpyInterface
     {
         $this->codeNumber = $codeNumber;
     }
+
+    function __toString()
+    {
+        return parent::__toString() . PHP_EOL
+            . "Code Number: {$this->getCodeNumber()}";
+    }
 }

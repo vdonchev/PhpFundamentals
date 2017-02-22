@@ -8,7 +8,7 @@ use MilitaryElite\Models\Contracts\MissionInterface;
 
 class Mission implements MissionInterface
 {
-    const VALID_STATES = ["Finished", "InProgress"];
+    const VALID_STATES = ["Finished", "inProgress"];
 
     private $codeName;
     private $state;
@@ -46,5 +46,10 @@ class Mission implements MissionInterface
     public function completeMission()
     {
         $this->setState("Finished");
+    }
+
+    function __toString()
+    {
+        return "Code Name: {$this->getCodeName()} State: {$this->getState()}";
     }
 }
