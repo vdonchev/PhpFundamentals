@@ -6,6 +6,9 @@ use PersonInterface\Citizen;
 require_once 'PersonInterface.php';
 require_once 'Citizen.php';
 
-$citizen = new Citizen("Pesho", 25);
+$name = trim(fgets(STDIN));
+$age = intval(trim(fgets(STDIN)));
+
+$citizen = new Citizen($name, $age);
 echo $citizen->getName() . PHP_EOL;
 echo $citizen->getAge();

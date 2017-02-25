@@ -8,7 +8,12 @@ require_once 'Models/Identifiable.php';
 require_once 'Models/Bithable.php';
 require_once 'Models/Citizen.php';
 
-$citizen = new Citizen("Pesho", 25, "9105152287", "15/05/1991");
+$name = trim(fgets(STDIN));
+$age = intval(trim(fgets(STDIN)));
+$id = trim(fgets(STDIN));
+$birthDate = trim(fgets(STDIN));
+
+$citizen = new Citizen($name, $age, $id, $birthDate);
 
 echo $citizen->getName() . PHP_EOL;
 echo $citizen->getAge() . PHP_EOL;

@@ -8,7 +8,7 @@ use MilitaryElite\Models\Contracts\MissionInterface;
 
 class Mission implements MissionInterface
 {
-    const VALID_STATES = ["Finished", "inProgress"];
+    const VALID_STATES = ["finished", "inprogress"];
 
     private $codeName;
     private $state;
@@ -36,7 +36,7 @@ class Mission implements MissionInterface
 
     public function setState(string $state)
     {
-        if (!in_array($state, self::VALID_STATES)) {
+        if (!in_array(strtolower($state), self::VALID_STATES)) {
             throw new \Exception("Invalid mission state supplied");
         }
 
