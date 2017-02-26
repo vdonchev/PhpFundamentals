@@ -57,7 +57,7 @@ for ($i = 0; $i < $linesCount; $i++) {
         }
 
         if ($command[0] === "DriveEmpty") {
-            $vehicles["Bus"]->drive(floatval($command[2]));
+            $vehicles["Bus"]->drive(floatval($command[2]), true);
         }
     } catch (Exception $e) {
         writeLine($e->getMessage());
